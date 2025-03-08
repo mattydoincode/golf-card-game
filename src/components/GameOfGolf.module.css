@@ -1,0 +1,379 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.controls {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formGroup label {
+  min-width: 150px;
+  font-weight: 500;
+}
+
+.formGroup input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buttons button:hover {
+  background-color: #0051b3;
+}
+
+.buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.gameDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gameInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.gameStats {
+  flex: 1;
+  min-width: 200px;
+}
+
+.cardDisplays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.cardDisplayContainer {
+  min-width: 150px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.deckContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drawDeck, .discardPile {
+  position: relative;
+  min-height: 150px;
+  transition: all 0.3s ease;
+}
+
+.highlightedDeck {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.7); /* Golden glow */
+  animation: highlightPulse 1.5s infinite;
+  z-index: 10;
+}
+
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(255, 215, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.7);
+  }
+}
+
+.cardCount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.emptyDeck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  min-width: 100px;
+  padding: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  border: 2px dashed #aaa;
+}
+
+.currentlyDrawnCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulse 1.5s infinite;
+  min-height: 150px; /* Fixed height to prevent layout shifts */
+}
+
+.playerDrawnCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: pulse 1.5s infinite;
+  min-height: 150px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 112, 243, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0);
+  }
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.player {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 450px; /* Fixed height to prevent layout shifts */
+  display: flex;
+  flex-direction: column;
+}
+
+.scoreInfo {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.visibleScore {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.visibleScore span {
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.faceDownInfo {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.faceDownCount {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.finalScore {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+}
+
+.finalScore span {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.drawnCardContainer {
+  margin-top: auto;
+  min-height: 180px; /* Fixed height to prevent layout shifts */
+  display: flex;
+  justify-content: center;
+}
+
+.emptyDrawnCard {
+  min-height: 150px;
+  width: 100%;
+}
+
+.currentPlayer {
+  background-color: #e3f2fd;
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gameOver {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gameOver h2 {
+  color: #0070f3;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.finalScores {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.finalScoreCard {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.finalScoreCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.winner {
+  background-color: #fff9c4;
+  border: 2px solid #ffd700;
+  transform: scale(1.05);
+}
+
+.winner:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.playerRank {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.winner .playerRank {
+  background-color: #ffd700;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.playerInfo {
+  flex: 1;
+}
+
+.playerInfo h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.finalScoreValue {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0070f3;
+  margin: 0;
+}
+
+.winner .finalScoreValue {
+  color: #ff6d00;
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .gameInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} 

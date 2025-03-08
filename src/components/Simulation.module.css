@@ -1,0 +1,554 @@
+.container {
+  padding: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0070f3;
+}
+
+.layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* History Panel */
+.historyPanel {
+  flex: 1;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 450px;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.historyHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.clearButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.clearButton:hover {
+  background-color: #ff7875;
+}
+
+.clearButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.historyList {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.noHistory {
+  color: #999;
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.historyItem {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.historyItemHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.historyDate {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.historyGames {
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.historyResults {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.playerResult {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.playerStats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.winnerResult {
+  background-color: #fff9c4;
+  border-left: 3px solid #ffd700;
+  transform: scale(1.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.historySummary {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #f0f8ff;
+  border-radius: 4px;
+  border-left: 3px solid #0070f3;
+}
+
+.historyWinner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #0070f3;
+}
+
+.historyTies {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  padding-left: 1.5rem;
+}
+
+.winnerIcon {
+  font-size: 1.2rem;
+}
+
+.playerAlgorithm {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.playerWins, .playerScore {
+  font-size: 0.9rem;
+}
+
+.cumulativeScore {
+  font-weight: bold;
+  color: #0070f3;
+}
+
+.tieInfo {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Config Panel */
+.configPanel {
+  flex: 1;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.configPanel h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.configForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formGroup label {
+  min-width: 150px;
+  font-weight: 500;
+}
+
+.formGroup input, .formGroup select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.playerConfig {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.playerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.playerHeader h4 {
+  margin: 0;
+}
+
+.removePlayerButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.removePlayerButton:hover {
+  background-color: #ff7875;
+}
+
+.removePlayerButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.addPlayerButton {
+  background-color: #52c41a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.addPlayerButton:hover {
+  background-color: #73d13d;
+}
+
+.addPlayerButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.runButton {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.runButton:hover {
+  background-color: #0051b3;
+}
+
+.runButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Progress Bar */
+.progressContainer {
+  margin-top: 2rem;
+}
+
+.progressBar {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #0070f3;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Results Table */
+.currentResults {
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.currentResults h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0070f3;
+}
+
+.winnerHighlight {
+  display: flex;
+  align-items: center;
+  background-color: #fff9c4;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  border: 1px solid #ffd700;
+}
+
+.trophy {
+  font-size: 3rem;
+  margin-right: 1rem;
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.winnerInfo {
+  flex: 1;
+}
+
+.winnerInfo h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.winnerName {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.winnerStats, .winnerScore {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.resultsTable {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resultsHeader {
+  display: table-row;
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.resultsHeader div {
+  display: table-cell;
+  padding: 0.75rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.resultsRow {
+  display: table-row;
+  transition: background-color 0.2s;
+}
+
+.winnerRow {
+  background-color: #fff9c4 !important;
+  font-weight: 500;
+}
+
+.resultsRow:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.resultsRow div {
+  display: table-cell;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Algorithm Panel */
+.algorithmPanel {
+  flex: 2;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: calc(100vh - 150px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.algorithmPanel h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+.algorithmList {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.algorithmList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.algorithmList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.algorithmList::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.algorithmList::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.algorithmItem {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.algorithmItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.algorithmName {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0070f3;
+  font-size: 1.2rem;
+}
+
+.algorithmDescription {
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.algorithmDescription h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #0070f3;
+  font-size: 1rem;
+}
+
+.algorithmDescription h4:first-child {
+  margin-top: 0;
+}
+
+.algorithmDescription p {
+  margin: 0.5rem 0;
+}
+
+.algorithmDescription ul, 
+.algorithmDescription ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.algorithmDescription li {
+  margin-bottom: 0.3rem;
+}
+
+.algorithmDescription strong {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .layout {
+    flex-direction: column;
+  }
+  
+  .historyPanel, .algorithmPanel {
+    max-width: none;
+    height: auto;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .formGroup label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .formGroup input, .formGroup select {
+    width: 100%;
+  }
+  
+  .algorithmItem {
+    padding: 1rem;
+  }
+  
+  .algorithmDescription {
+    font-size: 0.9rem;
+  }
+} 

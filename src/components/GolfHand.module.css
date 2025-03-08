@@ -1,0 +1,15 @@
+.hand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 220px; /* Fixed height to prevent layout shifts */
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  transition: transform 0.2s ease;
+}
